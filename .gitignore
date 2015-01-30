@@ -1,0 +1,11 @@
+Debug/
+bin/
+Binaries/
+.metadata
+*~
+target/
+<<<<<<< HEAD
+*.o
+=======
+*.o
+>>>>>>> origin/master
