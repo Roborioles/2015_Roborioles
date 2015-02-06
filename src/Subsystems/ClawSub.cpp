@@ -59,3 +59,7 @@ void ClawSub::Run(Joystick* stick){
 		clawElbow->Set(0);
 
 }
+void ClawSub::STOP(){
+	clawElbow->Set(0);
+	clawShoulder->Set(0);
+}

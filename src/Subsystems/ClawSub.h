@@ -36,6 +36,7 @@ public:
 	ClawSub();
 	void InitDefaultCommand();
 	void Run(Joystick*);
+	void STOP();
 };
 
 #endif
