@@ -33,7 +33,7 @@ class LiftMechanism: public PIDSubsystem {
 	double ReturnPIDInput();
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
-	void SetSpeed(Joystick*);
+	void SetSpeed();
 	void Stop();
 };
 
