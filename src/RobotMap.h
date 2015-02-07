@@ -33,6 +33,7 @@ public:
 	static AnalogPotentiometer* liftMechanismLiftPot;
 	static Compressor* solenc;
 	static Solenoid* solenSolenoid;
+	static Solenoid* solenkickSolenoid;
 	static SpeedController* noodlePickupNoodleMotor;
 	static DigitalInput* clawSubShoulderTopLS;
 	static DigitalInput* clawSubShoulderBottomLS;
