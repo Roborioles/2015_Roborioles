@@ -45,16 +45,16 @@ void ClawSub::InitDefaultCommand() {
 void ClawSub::Run(Joystick* stick){
 
 	if(stick->GetY()>0 && shoulderTopLS->Get()){
-		clawShoulder->Set(stick->GetY());
+		clawShoulder->Set(stick->GetY()*0.5);
 	}else if(stick->GetY()<0 && shoulderBottomLS->Get())
-		clawShoulder->Set(stick->GetY());
+		clawShoulder->Set(stick->GetY()*0.5);
 	else
 		clawShoulder->Set(0);
 
 	if(stick->GetX()>0 && elbowTopLS->Get())
-		clawElbow->Set(stick->GetX());
+		clawElbow->Set(stick->GetX()*0.5);
 	else if(stick->GetX()<0 && elbowBottomLS->Get())
-		clawElbow->Set(stick->GetX());
+		clawElbow->Set(stick->GetX()*0.5);
 	else
 		clawElbow->Set(0);
 
