@@ -27,7 +27,7 @@ void SolenCmd::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void SolenCmd::Execute() {
-	Robot::solen->Push(Robot::oi->getGamePad());
+	Robot::solen->Push();
 }
 
 // Make this return true when this Command no longer needs to run execute()

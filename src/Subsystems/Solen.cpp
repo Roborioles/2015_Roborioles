@@ -44,12 +44,12 @@ void Solen::Compress(){
 	}
 }*/
 
-void Solen::Push(Joystick* stick){
-	if(stick->GetRawButton(5)){
+void Solen::Push(){
+	if(Robot::oi->getGamePad()->GetRawButton(5)){
 		Robot::solen->solenoid->Set(true);
 		printf("What's up doc?");
 	}
-	else if (stick->GetRawButton(7)){
+	else if (Robot::oi->getGamePad()->GetRawButton(7)){
 		Robot::solen->solenoid->Set(false);
 		printf("Wascawwy wabbit!");
 	}
