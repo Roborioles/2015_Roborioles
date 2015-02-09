@@ -53,10 +53,10 @@ void Solen::Push(){
 		Robot::solen->solenoid->Set(false);
 		printf("Wascawwy wabbit!");
 	}
-	if (stick->GetRawButton(4)){
+	if (Robot::oi->getGamePad()->GetRawButton(4)){
 		Robot::solen->kickSolenoid->Set(true);
 		printf("You're dethpicable");
-	}else if (stick->GetRawButton(2)){
+	}else if (Robot::oi->getGamePad()->GetRawButton(2)){
 		Robot::solen->kickSolenoid->Set(false);
 	}
 }

@@ -28,7 +28,7 @@ void DriveBot::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DriveBot::Execute() {
 	Joystick* stick = Robot::oi->getDriveStick();
-	Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.5);
+	Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.7);
 }
 
 // Make this return true when this Command no longer needs to run execute()
