@@ -23,10 +23,15 @@ autoCmdGroup::autoCmdGroup() {
 	// these will run in order.
 
 	//AddSequential(new autoGrab());
-	AddSequential(new autoLift());
-	AddSequential(new autoDriveForward());
-	AddSequential(new autoPutDown());
-	AddSequential(new autoRelease());
+	if(){
+
+	}
+	else{
+		AddSequential(new autoLift());
+		AddSequential(new autoDriveForward(2, .53));
+		AddSequential(new autoPutDown());
+		AddSequential(new autoRelease());
+	}
 	// To run multiple commands at the same time,
 	// use AddParallel()
 	// e.g. AddParallel(new Command1());
