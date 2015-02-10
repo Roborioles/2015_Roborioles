@@ -24,7 +24,11 @@ autoCmdGroup::autoCmdGroup() {
 
 	//AddSequential(new autoGrab());
 	if(){
-
+		AddSequential(new autoLift());
+		AddSequential(new autoRotate90());
+		AddSequential(new autoDriveForward(2, .53));
+		AddSequential(new autoPutDown());
+		AddSequential(new autoRelease());
 	}
 	else{
 		AddSequential(new autoLift());
