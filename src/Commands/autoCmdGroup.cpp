@@ -22,19 +22,16 @@ autoCmdGroup::autoCmdGroup() {
 	//      AddSequential(new Command2());
 	// these will run in order.
 
-
-
-	//If lower limit is hit, use Auto 2
-	if(!Robot::liftMechanism->lowerLimit){
-		//AddSequential(new autoGrab());
+	if(){
 		AddSequential(new autoLift());
-		AddSequential(new autoDriveForward());
+		AddSequential(new autoRotate90());
+		AddSequential(new autoDriveForward(2, .53));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
 	}
 	else{
 		AddSequential(new autoLift());
-		AddSequential(new autoDriveForward());
+		AddSequential(new autoDriveForward(2, .53));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
 	}

@@ -23,7 +23,8 @@
  */
 class autoDriveForward: public Command {
 public:
-	autoDriveForward();
+	float forwardSpeed;
+	autoDriveForward(int tim, float sp);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
