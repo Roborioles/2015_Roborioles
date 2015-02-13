@@ -23,6 +23,7 @@
  */
 class PickUpTote: public Command {
 public:
+	static bool first,joystick;
 	PickUpTote();
 	virtual void Initialize();
 	virtual void Execute();
