@@ -22,9 +22,10 @@ autoCmdGroup::autoCmdGroup() {
 	//      AddSequential(new Command2());
 	// these will run in order.
 
-	if(){
+	if(Robot::chassis->autoSwitch->Get()){
 		AddSequential(new autoLift());
-		AddSequential(new autoRotate90());
+//		AddSequential(new autoRotate90());
+//		AddSequential(new autoRotate90());
 		AddSequential(new autoDriveForward(2, .53));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
