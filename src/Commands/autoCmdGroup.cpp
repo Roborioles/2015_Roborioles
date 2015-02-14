@@ -16,6 +16,8 @@
 #include "autoLift.h"
 #include "autoPutDown.h"
 #include "autoDriveForward.h"
+#include "autoRotate90.h"
+
 autoCmdGroup::autoCmdGroup() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
@@ -24,15 +26,14 @@ autoCmdGroup::autoCmdGroup() {
 
 	if(Robot::chassis->autoSwitch->Get()){
 		AddSequential(new autoLift());
-//		AddSequential(new autoRotate90());
-//		AddSequential(new autoRotate90());
+		AddSequential(new autoRotate90());
 		AddSequential(new autoDriveForward(2, .53));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
 	}
 	else{
 		AddSequential(new autoLift());
-		AddSequential(new autoDriveForward(2, .53));
+		AddSequential(new autoDriveForward(3, .51));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
 	}
