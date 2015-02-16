@@ -28,7 +28,7 @@ void autoRotate90::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoRotate90::Execute() {
-	Robot::chassis->robotDrive->MecanumDrive_Cartesian(0,0,.5);
+	Robot::chassis->robotDrive->MecanumDrive_Cartesian(0,0,-.45);
 }
 
 // Make this return true when this Command no longer needs to run execute()

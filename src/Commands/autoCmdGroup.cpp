@@ -24,16 +24,18 @@ autoCmdGroup::autoCmdGroup() {
 	//      AddSequential(new Command2());
 	// these will run in order.
 
+	printf("--------GOT TO AUTO START----------\n");
 	if(Robot::chassis->autoSwitch->Get()){
+		printf("Auto1 Running");
 		AddSequential(new autoLift());
 		AddSequential(new autoRotate90());
-		AddSequential(new autoDriveForward(2, .53));
+		AddSequential(new autoDriveForward(2, .43));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
-	}
-	else{
+	} else {
+		printf("Auto2 Running");
 		AddSequential(new autoLift());
-		AddSequential(new autoDriveForward(3, .51));
+		AddSequential(new autoDriveForward(2, .53));
 		AddSequential(new autoPutDown());
 		AddSequential(new autoRelease());
 	}

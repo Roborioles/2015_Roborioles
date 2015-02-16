@@ -28,7 +28,7 @@ void autoLift::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoLift::Execute() {
-	Robot::liftMechanism->liftMotor->Set(.5);
+	Robot::liftMechanism->liftMotor->Set(-.55);
 }
 
 // Make this return true when this Command no longer needs to run execute()
