@@ -24,7 +24,7 @@
 class autoPutDown: public Command {
 public:
 	bool donePutDown;
-	autoPutDown();
+	autoPutDown(int tim, float sp);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

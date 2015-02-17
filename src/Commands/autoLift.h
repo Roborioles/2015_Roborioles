@@ -24,7 +24,7 @@
 class autoLift: public Command {
 public:
 	bool doneLift;
-	autoLift();
+	autoLift(int tim, float sp);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

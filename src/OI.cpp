@@ -58,11 +58,11 @@ OI::OI() {
 
 	SmartDashboard::PutData("autoCmdGroup", new autoCmdGroup());
 
-	SmartDashboard::PutData("autoLift", new autoLift());
+	SmartDashboard::PutData("autoLift", new autoLift(0,0));
 
 	SmartDashboard::PutData("autoGrab", new autoGrab());
 
-	SmartDashboard::PutData("autoPutDown", new autoPutDown());
+	SmartDashboard::PutData("autoPutDown", new autoPutDown(0,0));
 
 	SmartDashboard::PutData("autoDriveForward", new autoDriveForward(0,0));
 
