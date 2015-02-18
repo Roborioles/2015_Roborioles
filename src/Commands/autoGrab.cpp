@@ -28,7 +28,7 @@ void autoGrab::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoGrab::Execute() {
-	Robot::solen->solenoid->Set(true);
+	Robot::solen->solenoid->Set(false);
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -34,9 +34,9 @@ autoCmdGroup::autoCmdGroup() {
 		AddSequential(new autoRelease());
 	} else {
 		printf("Auto2 Running - Lifting Recycle Bin");
-		AddSequential(new autoGrab);
-		AddSequential(new autoLift(2,-0.55));
 		AddSequential(new autoRelease);
+		AddSequential(new autoLift(2,-0.55));
+		AddSequential(new autoGrab);
 		AddSequential(new autoLift(2,-0.55));
 		AddSequential(new autoDriveForward(2, 0.42));
 		AddSequential(new autoPutDown(3,0.55));

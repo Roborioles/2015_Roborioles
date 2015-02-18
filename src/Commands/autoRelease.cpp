@@ -28,7 +28,7 @@ void autoRelease::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoRelease::Execute() {
-	Robot::solen->solenoid->Set(false);
+	Robot::solen->solenoid->Set(true);
 }
 
 // Make this return true when this Command no longer needs to run execute()
