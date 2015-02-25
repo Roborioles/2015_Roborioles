@@ -68,20 +68,20 @@ void LiftMechanism::InitDefaultCommand() {
 }
 
 void LiftMechanism::SetSpeed() {
-	// while (upperLimit->Get() & lowerLimit->Get()) {
 
-//	double dir = Robot::oi->getGamePad()->GetThrottle() * -1 ;
 	double dir = Robot::oi->getGamePad()->GetThrottle() ;
 
 	// check direction
 	// if positive then check upperLimit
 	// if negative then check lower limit
-//	if (dir>0 && lowerLimit->Get())
+
+	// Note: upperLimit is really lower limit and lowerLimit is really upper limit
+	// Note: positive motor values makes lift lower, negative values makes the lift raise
+
 	if (dir>0 && upperLimit->Get())
 	{
 		liftMotor->Set(dir);
 	}
-//	else if (dir<0 && upperLimit->Get())
 	else if (dir<0 && lowerLimit->Get())
 	{
 		liftMotor->Set(dir);

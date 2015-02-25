@@ -29,7 +29,7 @@ void autoPutDown::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoPutDown::Execute() {
-	if (Robot::liftMechanism->lowerLimit->Get()) {
+	if (Robot::liftMechanism->upperLimit->Get()) {
 		Robot::liftMechanism->liftMotor->Set(putDownSpeed);
 	}
 }

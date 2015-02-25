@@ -17,6 +17,7 @@
 #include "autoPutDown.h"
 #include "autoDriveForward.h"
 #include "autoRotate90.h"
+#include "autoPutDownTote.h"
 
 autoCmdGroup::autoCmdGroup() {
 	// Add Commands here:
@@ -30,7 +31,8 @@ autoCmdGroup::autoCmdGroup() {
 		AddSequential(new autoLift(2,-0.55));
 		AddSequential(new autoRotate90());
 		AddSequential(new autoDriveForward(2, 0.36));
-		AddSequential(new autoPutDown(2,0.74));
+		// AddSequential(new autoPutDown(2,0.74));
+		AddSequential(new autoPutDownTote);
 		AddSequential(new autoRelease());
 	} else {
 		printf("Auto2 Running - Lifting Recycle Bin");
