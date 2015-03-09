@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 #include "DriveBot.h"
 
 DriveBot::DriveBot() {
@@ -24,11 +23,18 @@ DriveBot::DriveBot() {
 void DriveBot::Initialize() {
 	
 }
-
+double DriveBot::abs(double in){
+	if(in<0)
+		return -1*in;
+	return in;
+}
 // Called repeatedly when this Command is scheduled to run
 void DriveBot::Execute() {
 	Joystick* stick = Robot::oi->getDriveStick();
-	Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.75);
+	if(abs(stick->GetX())>=.05&&abs(stick->GetY())>=.05&&abs(stick->GetZ())>=.5)
+		Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.75);
+	else
+		Robot::chassis->robotDrive->MecanumDrive_Cartesian(0,0,0);
 }
 
 // Make this return true when this Command no longer needs to run execute()

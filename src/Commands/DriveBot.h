@@ -25,6 +25,7 @@ class DriveBot: public Command {
 public:
 	DriveBot();
 	virtual void Initialize();
+	double abs(double);
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
