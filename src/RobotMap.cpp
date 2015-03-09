@@ -20,6 +20,7 @@ SpeedController* RobotMap::chassisLeftFrontMotor = NULL;
 SpeedController* RobotMap::chassisLeftRearMotor = NULL;
 RobotDrive* RobotMap::chassisRobotDrive = NULL;
 DigitalInput* RobotMap::chassisAutoSwitch = NULL;
+DigitalInput* RobotMap::chassisAutoSwitch2 = NULL;
 SpeedController* RobotMap::liftMechanismLiftMotor = NULL;
 DigitalInput* RobotMap::liftMechanismUpperLimit = NULL;
 DigitalInput* RobotMap::liftMechanismLowerLimit = NULL;
@@ -65,6 +66,9 @@ void RobotMap::init() {
 	chassisAutoSwitch = new DigitalInput(8);
 	lw->AddSensor("Chassis", "AutoSwitch", chassisAutoSwitch);
 	
+	chassisAutoSwitch = new DigitalInput(9);
+		lw->AddSensor("Chassis", "AutoSwitch2", chassisAutoSwitch2);
+
 	liftMechanismLiftMotor = new Talon(4);
 	lw->AddActuator("LiftMechanism", "LiftMotor", (Talon*) liftMechanismLiftMotor);
 	

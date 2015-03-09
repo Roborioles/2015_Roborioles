@@ -28,6 +28,7 @@ public:
 	static SpeedController* chassisLeftRearMotor;
 	static RobotDrive* chassisRobotDrive;
 	static DigitalInput* chassisAutoSwitch;
+	static DigitalInput* chassisAutoSwitch2;
 	static SpeedController* liftMechanismLiftMotor;
 	static DigitalInput* liftMechanismUpperLimit;
 	static DigitalInput* liftMechanismLowerLimit;

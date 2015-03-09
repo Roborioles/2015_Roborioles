@@ -30,7 +30,13 @@ autoCmdGroup::autoCmdGroup() {
 		printf("Auto1 Running - Lifting Yellow Tote");
 		AddSequential(new autoLift(2,-0.55));
 		AddSequential(new autoRotate90());
-		AddSequential(new autoDriveForward(2, 0.36));
+		if (Robot::chassis->autoSwitch2->Get()){
+			printf("Going over scoring platform");
+			AddSequential(new autoDriveForward(2, 0.36));
+		}else {
+			printf("Just going forward");
+			AddSequential(new autoDriveForward(2, 0.3));
+		}
 		// AddSequential(new autoPutDown(2,0.74));
 		AddSequential(new autoPutDownTote);
 		AddSequential(new autoRelease());
@@ -40,7 +46,13 @@ autoCmdGroup::autoCmdGroup() {
 		AddSequential(new autoLift(2,-0.55));
 		AddSequential(new autoGrab);
 		AddSequential(new autoLift(2,-0.55));
-		AddSequential(new autoDriveForward(2, 0.42));
+		if (Robot::chassis->autoSwitch2->Get()){
+			printf("Going over scoring platform");
+			AddSequential(new autoDriveForward(2, 0.42));
+		} else {
+			printf("Just going forward");
+			AddSequential(new autoDriveForward(2, 0.38));
+		}
 		AddSequential(new autoPutDown(3,0.55));
 		AddSequential(new autoRelease());
 	}
