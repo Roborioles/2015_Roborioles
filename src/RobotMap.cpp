@@ -63,11 +63,12 @@ void RobotMap::init() {
         chassisRobotDrive->SetMaxOutput(1.0);
         chassisRobotDrive->SetInvertedMotor(RobotDrive::kFrontLeftMotor, true);
         chassisRobotDrive->SetInvertedMotor(RobotDrive::kRearLeftMotor, true);
-	chassisAutoSwitch = new DigitalInput(8);
+
+    chassisAutoSwitch = new DigitalInput(8);
 	lw->AddSensor("Chassis", "AutoSwitch", chassisAutoSwitch);
 	
-	chassisAutoSwitch = new DigitalInput(9);
-		lw->AddSensor("Chassis", "AutoSwitch2", chassisAutoSwitch2);
+	chassisAutoSwitch2 = new DigitalInput(9);
+	lw->AddSensor("Chassis", "AutoSwitch2", chassisAutoSwitch2);
 
 	liftMechanismLiftMotor = new Talon(4);
 	lw->AddActuator("LiftMechanism", "LiftMotor", (Talon*) liftMechanismLiftMotor);
