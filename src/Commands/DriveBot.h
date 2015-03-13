@@ -26,6 +26,7 @@ public:
 	DriveBot();
 	virtual void Initialize();
 	double abs(double);
+	double deadband(double JoystickValue,double DeadbandCutOff);
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();

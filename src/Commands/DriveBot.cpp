@@ -28,13 +28,27 @@ double DriveBot::abs(double in){
 		return -1*in;
 	return in;
 }
+
+double DriveBot::deadband(double JoystickValue,double DeadbandCutOff) {
+	if (JoystickValue < DeadbandCutOff && JoystickValue > DeadbandCutOff*(-1)) {
+		return 0;
+	} else {
+		return (JoystickValue - (abs(JoystickValue)/JoystickValue*DeadbandCutOff))/(1-DeadbandCutOff);
+	}
+}
+
 // Called repeatedly when this Command is scheduled to run
 void DriveBot::Execute() {
 	Joystick* stick = Robot::oi->getDriveStick();
-	if(abs(stick->GetX())>=.05&&abs(stick->GetY())>=.05&&abs(stick->GetZ())>=.5)
-		Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.75);
-	else
-		Robot::chassis->robotDrive->MecanumDrive_Cartesian(0,0,0);
+	double x = deadband(stick->GetX(),0.05);
+	double y = deadband(stick->GetY(),0.05);
+	double z = deadband(stick->GetZ(),0.05);
+
+	Robot::chassis->robotDrive->MecanumDrive_Cartesian(x*-1,y*-1,z*-0.75);
+	// if(abs(stick->GetX())>=.05&&abs(stick->GetY())>=.05&&abs(stick->GetZ())>=.5)
+	//	Robot::chassis->robotDrive->MecanumDrive_Cartesian(stick->GetX()*-1,stick->GetY()*-1,stick->GetZ()*-0.75);
+	// else
+	//	Robot::chassis->robotDrive->MecanumDrive_Cartesian(0,0,0);
 }
 
 // Make this return true when this Command no longer needs to run execute()

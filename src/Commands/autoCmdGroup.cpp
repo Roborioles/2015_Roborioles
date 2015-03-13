@@ -48,10 +48,10 @@ autoCmdGroup::autoCmdGroup() {
 		AddSequential(new autoLift(2,-0.55));
 		if (Robot::chassis->autoSwitch2->Get()){
 			printf("Going over scoring platform");
-			AddSequential(new autoDriveForward(2, 0.42));
+			AddSequential(new autoDriveForward(2, 0.44));
 		} else {
 			printf("Just going forward");
-			AddSequential(new autoDriveForward(2, 0.38));
+			AddSequential(new autoDriveForward(2, 0.40));
 		}
 		AddSequential(new autoPutDown(3,0.55));
 		AddSequential(new autoRelease());
