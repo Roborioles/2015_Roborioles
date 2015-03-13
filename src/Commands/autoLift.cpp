@@ -30,7 +30,11 @@ void autoLift::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void autoLift::Execute() {
-	Robot::liftMechanism->liftMotor->Set(liftSpeed);
+	if (Robot::liftMechanism->lowerLimit->Get()) {
+		Robot::liftMechanism->liftMotor->Set(liftSpeed);
+	} else {
+		Robot::liftMechanism->Stop();
+	}
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -40,7 +44,7 @@ bool autoLift::IsFinished() {
 
 // Called once after isFinished returns true
 void autoLift::End() {
-	
+	Robot::liftMechanism->Stop();
 }
 
 // Called when another command which requires one or more of the same

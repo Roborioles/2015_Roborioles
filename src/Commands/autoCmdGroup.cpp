@@ -28,7 +28,7 @@ autoCmdGroup::autoCmdGroup() {
 	printf("--------GOT TO AUTO START----------\n");
 	if(Robot::chassis->autoSwitch->Get()){
 		printf("Auto1 Running - Lifting Yellow Tote");
-		AddSequential(new autoLift(3,-1));
+		AddSequential(new autoLift(4,-1)); // 3 seconds at full speed
 		AddSequential(new autoRotate90());
 		if (Robot::chassis->autoSwitch2->Get()){
 			printf("Going over scoring platform");
@@ -51,7 +51,7 @@ autoCmdGroup::autoCmdGroup() {
 			AddSequential(new autoDriveForward(2, 0.44));
 		} else {
 			printf("Just going forward");
-			AddSequential(new autoDriveForward(2, 0.40));
+			AddSequential(new autoDriveForward(2, 0.38)); // Changed from 0.40, which went long
 		}
 		AddSequential(new autoPutDown(3,0.55));
 		AddSequential(new autoRelease());

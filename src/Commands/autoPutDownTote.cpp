@@ -17,7 +17,7 @@ void autoPutDownTote::Initialize()
 void autoPutDownTote::Execute()
 {
 	if (Robot::liftMechanism->upperLimit->Get()) {
-		Robot::liftMechanism->liftMotor->Set(0.55);
+		Robot::liftMechanism->liftMotor->Set(0.75);
 	} else {
 		End();
 	}
